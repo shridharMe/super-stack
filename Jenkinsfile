@@ -16,7 +16,7 @@ pipeline {
         stage ('terraform plan') {
             steps {
                 script{
-                  sh 'terraform plan'
+                  sh 'terraform plan --out output.plan'
                 }
                 }
              
@@ -28,7 +28,7 @@ pipeline {
           }	
             steps {
                 script{
-                    sh 'terraform apply'
+                    sh 'terraform apply output.plan -auto-approve'
                 }
             }
         }
