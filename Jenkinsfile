@@ -5,14 +5,7 @@ pipeline {
         timestamps()
     }
     stages{
-    
-       stage ('print Params') {
-        steps {
-                script{
-                  println params
-                }
-         } 
-        }
+   
         stage ('terraform init') {
             steps {
                 script{
