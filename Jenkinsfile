@@ -28,7 +28,7 @@ pipeline {
           }	
             steps {
                 script{
-                    sh 'terraform apply output.plan -auto-approve'
+                    sh 'terraform apply -auto-approve output.plan'
                 }
             }
         }
