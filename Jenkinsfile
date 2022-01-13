@@ -16,35 +16,22 @@ pipeline {
         stage ('terraform init') {
             steps {
                 script{
-                  sh '''
-                      echo "terraform init"
-                    '''
+                  sh 'terraform init'
                   }
               }   
         }
         stage ('terraform plan') {
             steps {
                 script{
-                  sh '''
-                      echo "terraform plan"
-                    '''
+                  sh 'terraform plan'
                 }
                 }
              
         }
-        stage ('terraform test') {
-            steps {
-                script{
-       
-                  sh '''
-                      echo "terraform plan"
-                    '''
-                }
-            }
-        }
+      
         stage ('terraform apply') {
          when {
-               expression { env.GIT_BRANCH == 'master' }                                 
+               expression { env.GIT_BRANCH == 'origin/master' }                                 
           }	
             steps {
                 script{
