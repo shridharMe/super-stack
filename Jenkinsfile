@@ -35,9 +35,7 @@ pipeline {
           }	
             steps {
                 script{
-                    sh '''
-                      echo "terraform apply"
-                     '''
+                    sh 'terraform apply'
                 }
             }
         }
